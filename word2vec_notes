@@ -1,0 +1,11 @@
+A word embedding is an approach to provide a dense vector representation of words that capture something about their meaning.Each word is represented by a point in the embedding space and these points are learned and moved around based on the words that surround the target word.The vector space representation of the words provides a projection where words with similar meanings are locally clustered within the space.The use of word embeddings over other text representations is one of the key methods that has led to breakthrough performance with deep neural networks on problems like machine translation.
+
+Word2vec is one algorithm for learning a word embedding from a text corpus.There are two main training algorithms that can be used to learn the embedding from text; they are continuous bag of words (CBOW) and skip grams.Learning a word embedding from text involves loading and organizing the text into sentences.each sentence must be tokenized, meaning divided into words and prepared. each sentence must be tokenized, meaning divided into words and prepared. provide these to the constructor of a new Word2Vec() instance. There are many parameters on this constructor; 
+
+    size: (default 100) The number of dimensions of the embedding, e.g. the length of the dense vector to represent each token (word).
+    window: (default 5) The maximum distance between a target word and words around the target word.
+    min_count: (default 5) The minimum count of words to consider when training the model; words with an occurrence less than this count will be ignored.
+    workers: (default 3) The number of threads to use while training.
+    sg: (default 0 or CBOW) The training algorithm, either CBOW (0) or skip gram (1).
+After the model is trained, it is accessible via the “wv” attribute. This is the actual word vector model in which queries can be made.
+
